@@ -1,0 +1,1126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pothole.nz — Auckland Driveway & Carpark Maintenance</title>
+  <meta name="description" content="Auckland's driveway and carpark maintenance specialists. Pothole repair, crack sealing and asphalt seal coating. Free quotes. Weekend availability." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --orange: #E8620A;
+      --orange-dark: #c75208;
+      --charcoal: #2C2C2C;
+      --white: #FFFFFF;
+      --grey-bg: #F5F5F5;
+      --grey-mid: #e0e0e0;
+      --grey-text: #666;
+      --radius: 12px;
+      --shadow: 0 4px 24px rgba(0,0,0,0.09);
+      --shadow-hover: 0 8px 36px rgba(0,0,0,0.15);
+      --transition: 0.28s ease;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: var(--charcoal);
+      background: var(--white);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ── UTILITIES ── */
+    .container { width: 100%; max-width: 1160px; margin: 0 auto; padding: 0 20px; }
+    .section { padding: 80px 0; }
+    .section-alt { background: var(--grey-bg); }
+    .section-dark { background: var(--charcoal); color: var(--white); }
+
+    .section-label {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      font-size: clamp(1.65rem, 3.5vw, 2.4rem);
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+
+    .section-subtitle {
+      font-size: 1rem;
+      color: var(--grey-text);
+      max-width: 580px;
+    }
+
+    .section-dark .section-subtitle { color: #aaa; }
+
+    .section-header { text-align: center; margin-bottom: 56px; }
+    .section-header .section-subtitle { margin: 0 auto; }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 30px;
+      border-radius: 8px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      cursor: pointer;
+      border: none;
+      text-decoration: none;
+      transition: transform var(--transition), box-shadow var(--transition), background var(--transition);
+    }
+
+    .btn-primary {
+      background: var(--orange);
+      color: var(--white);
+      box-shadow: 0 4px 16px rgba(232,98,10,0.35);
+    }
+
+    .btn-primary:hover {
+      background: var(--orange-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(232,98,10,0.45);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      border: 2px solid rgba(255,255,255,0.75);
+    }
+
+    .btn-outline:hover {
+      background: rgba(255,255,255,0.12);
+      border-color: var(--white);
+      transform: translateY(-2px);
+    }
+
+    /* ── NAV ── */
+    #navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: var(--charcoal);
+      box-shadow: 0 2px 16px rgba(0,0,0,0.18);
+      transition: background 0.3s;
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px;
+    }
+
+    .nav-logo {
+      font-size: 1.55rem;
+      font-weight: 800;
+      color: var(--white);
+      text-decoration: none;
+      letter-spacing: -0.02em;
+    }
+
+    .nav-logo span { color: var(--orange); }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .nav-phone {
+      color: rgba(255,255,255,0.85);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.92rem;
+      transition: color var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .nav-phone i { color: var(--orange); font-size: 0.85rem; }
+    .nav-phone:hover { color: var(--white); }
+
+    .nav-phone-text { display: none; }
+
+    @media (min-width: 480px) { .nav-phone-text { display: inline; } }
+
+    /* ── HERO ── */
+    #hero {
+      position: relative;
+      min-height: 100svh;
+      display: flex;
+      align-items: center;
+      background: #1a1a1a;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(135deg, rgba(232,98,10,0.22) 0%, transparent 55%),
+        linear-gradient(rgba(15,15,15,0.72), rgba(15,15,15,0.72)),
+        url('hero-bg.jpg');
+      background-size: cover;
+      background-position: center;
+      background-color: #1a1a1a;
+    }
+
+    /* Subtle vignette */
+    .hero-bg::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 20% 80%, rgba(232,98,10,0.10) 0%, transparent 55%);
+    }
+
+    .hero-bg::after {
+      content: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 720px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(232,98,10,0.18);
+      border: 1px solid rgba(232,98,10,0.4);
+      color: #f5a06a;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 50px;
+      margin-bottom: 24px;
+    }
+
+    .hero-badge i { font-size: 0.72rem; }
+
+    .hero-title {
+      font-size: clamp(2rem, 5.5vw, 3.6rem);
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1.1;
+      margin-bottom: 20px;
+      letter-spacing: -0.02em;
+    }
+
+    .hero-title span { color: var(--orange); }
+
+    .hero-sub {
+      font-size: clamp(0.95rem, 1.8vw, 1.12rem);
+      color: rgba(255,255,255,0.75);
+      max-width: 580px;
+      margin-bottom: 36px;
+      line-height: 1.7;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .hero-stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 32px;
+      margin-top: 56px;
+      padding-top: 40px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .hero-stat { text-align: left; }
+    .hero-stat-num {
+      font-size: 1.9rem;
+      font-weight: 800;
+      color: var(--orange);
+      line-height: 1;
+    }
+    .hero-stat-label {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.55);
+      font-weight: 500;
+      margin-top: 3px;
+    }
+
+    /* ── SERVICES ── */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 28px;
+    }
+
+    .service-card-img {
+      width: calc(100% + 64px);
+      margin: -36px -32px 28px;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.45s ease;
+    }
+
+    .service-card:hover .service-card-img { transform: scale(1.04); }
+
+    .service-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 36px 32px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(0,0,0,0.05);
+      transition: transform var(--transition), box-shadow var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      background: var(--orange);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.35s ease;
+    }
+
+    .service-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-hover); }
+    .service-card:hover::before { transform: scaleX(1); }
+
+    .service-icon {
+      width: 60px;
+      height: 60px;
+      background: rgba(232,98,10,0.1);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 22px;
+      transition: background var(--transition);
+    }
+
+    .service-icon i {
+      font-size: 1.6rem;
+      color: var(--orange);
+    }
+
+    .service-card:hover .service-icon { background: rgba(232,98,10,0.18); }
+
+    .service-card h3 {
+      font-size: 1.18rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .service-card p {
+      font-size: 0.92rem;
+      color: var(--grey-text);
+      line-height: 1.7;
+    }
+
+    /* ── WHY CHOOSE US ── */
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 28px;
+    }
+
+    .why-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: var(--radius);
+      padding: 32px 28px;
+      transition: background var(--transition), transform var(--transition);
+    }
+
+    .why-card:hover {
+      background: rgba(255,255,255,0.1);
+      transform: translateY(-4px);
+    }
+
+    .why-icon {
+      width: 52px;
+      height: 52px;
+      background: rgba(232,98,10,0.2);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 18px;
+    }
+
+    .why-icon i { font-size: 1.35rem; color: var(--orange); }
+
+    .why-card h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 10px;
+    }
+
+    .why-card p {
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.65;
+    }
+
+    /* ── WHO WE SERVE ── */
+    .serve-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
+    }
+
+    .serve-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 30px 26px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(0,0,0,0.05);
+      transition: transform var(--transition), box-shadow var(--transition);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .serve-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); }
+
+    .serve-card-icon {
+      width: 46px;
+      height: 46px;
+      background: rgba(232,98,10,0.1);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .serve-card-icon i { font-size: 1.2rem; color: var(--orange); }
+
+    .serve-card h3 {
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    .serve-card p {
+      font-size: 0.875rem;
+      color: var(--grey-text);
+      line-height: 1.65;
+    }
+
+    /* ── HOW IT WORKS ── */
+    .steps-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 0;
+      position: relative;
+    }
+
+    .steps-container::before {
+      content: '';
+      position: absolute;
+      top: 38px;
+      left: calc(100% / 6);
+      right: calc(100% / 6);
+      height: 2px;
+      background: linear-gradient(90deg, var(--orange), rgba(232,98,10,0.2));
+      display: none;
+    }
+
+    @media (min-width: 768px) { .steps-container::before { display: block; } }
+
+    .step {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 20px 28px;
+    }
+
+    .step-num {
+      width: 76px;
+      height: 76px;
+      background: var(--orange);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.7rem;
+      font-weight: 800;
+      color: var(--white);
+      margin-bottom: 20px;
+      box-shadow: 0 6px 20px rgba(232,98,10,0.4);
+      position: relative;
+      z-index: 1;
+      flex-shrink: 0;
+    }
+
+    .step h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .step p {
+      font-size: 0.88rem;
+      color: var(--grey-text);
+      line-height: 1.65;
+    }
+
+    /* ── TESTIMONIALS ── */
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    .testimonial-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 30px 28px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(0,0,0,0.05);
+      transition: transform var(--transition), box-shadow var(--transition);
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .testimonial-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); }
+
+    .stars { color: #f5a623; font-size: 0.85rem; letter-spacing: 2px; }
+
+    .testimonial-card blockquote {
+      font-size: 0.92rem;
+      color: var(--charcoal);
+      line-height: 1.7;
+      font-style: italic;
+      flex: 1;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .author-avatar {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--orange);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      color: var(--white);
+      font-size: 0.95rem;
+      flex-shrink: 0;
+    }
+
+    .author-name {
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+
+    .author-role {
+      font-size: 0.78rem;
+      color: var(--grey-text);
+    }
+
+    /* ── QUOTE FORM ── */
+    #quote { background: var(--grey-bg); }
+
+    .form-wrapper {
+      max-width: 680px;
+      margin: 0 auto;
+      background: var(--white);
+      border-radius: 16px;
+      padding: 48px 40px;
+      box-shadow: var(--shadow-hover);
+    }
+
+    @media (max-width: 600px) { .form-wrapper { padding: 32px 22px; } }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    @media (max-width: 540px) { .form-row { grid-template-columns: 1fr; } }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-bottom: 18px;
+    }
+
+    .form-group label {
+      font-size: 0.83rem;
+      font-weight: 600;
+      color: var(--charcoal);
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.92rem;
+      padding: 13px 16px;
+      border: 1.5px solid var(--grey-mid);
+      border-radius: 8px;
+      color: var(--charcoal);
+      background: var(--white);
+      transition: border-color var(--transition), box-shadow var(--transition);
+      outline: none;
+      width: 100%;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--orange);
+      box-shadow: 0 0 0 3px rgba(232,98,10,0.12);
+    }
+
+    .form-group textarea { resize: vertical; min-height: 120px; }
+
+    .form-group select { cursor: pointer; }
+
+    .form-submit { width: 100%; padding: 16px; font-size: 1rem; border-radius: 8px; }
+
+    .form-note {
+      text-align: center;
+      font-size: 0.78rem;
+      color: var(--grey-text);
+      margin-top: 14px;
+    }
+
+    .form-note i { color: var(--orange); margin-right: 4px; }
+
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: 24px 0 8px;
+    }
+
+    .form-success i {
+      font-size: 3rem;
+      color: #2ecc71;
+      margin-bottom: 14px;
+      display: block;
+    }
+
+    .form-success h3 { font-size: 1.3rem; font-weight: 700; margin-bottom: 8px; }
+    .form-success p { color: var(--grey-text); font-size: 0.92rem; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #1a1a1a;
+      color: rgba(255,255,255,0.55);
+      padding: 40px 0;
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .footer-logo {
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--white);
+      text-decoration: none;
+    }
+
+    .footer-logo span { color: var(--orange); }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 22px;
+      align-items: center;
+    }
+
+    .footer-links a {
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+      font-size: 0.88rem;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: color var(--transition);
+    }
+
+    .footer-links a i { color: var(--orange); font-size: 0.82rem; }
+    .footer-links a:hover { color: var(--white); }
+
+    .footer-copy {
+      font-size: 0.78rem;
+      width: 100%;
+      text-align: center;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 20px;
+      margin-top: 10px;
+    }
+
+    /* ── SCROLL ANIMATIONS ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+
+    /* ── FLOATING CTA (mobile) ── */
+    .float-cta {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 900;
+      display: none;
+      background: var(--orange);
+      color: var(--white);
+      padding: 14px 28px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 0.92rem;
+      text-decoration: none;
+      box-shadow: 0 6px 24px rgba(232,98,10,0.5);
+      transition: transform var(--transition), box-shadow var(--transition);
+      white-space: nowrap;
+    }
+
+    .float-cta:hover { transform: translateX(-50%) translateY(-2px); box-shadow: 0 10px 32px rgba(232,98,10,0.6); }
+    .float-cta i { margin-right: 8px; }
+
+    @media (max-width: 640px) { .float-cta { display: flex; align-items: center; } }
+
+    /* ── SCROLLBAR ── */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #f1f1f1; }
+    ::-webkit-scrollbar-thumb { background: var(--orange); border-radius: 4px; }
+  </style>
+</head>
+<body>
+
+  <!-- ══ NAV ══ -->
+  <nav id="navbar">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="#hero" class="nav-logo">Pothole<span>.nz</span></a>
+        <div class="nav-right">
+          <a href="tel:0274377010" class="nav-phone">
+            <i class="fa-solid fa-phone"></i>
+            <span class="nav-phone-text">027 437 7010</span>
+          </a>
+          <a href="#quote" class="btn btn-primary">Get Free Quote</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ══ HERO ══ -->
+  <section id="hero">
+    <div class="hero-bg"></div>
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge reveal">
+          <i class="fa-solid fa-location-dot"></i>
+          Auckland-based &amp; locally owned
+        </div>
+        <h1 class="hero-title reveal reveal-delay-1">
+          Auckland's Driveway<br />&amp; Carpark <span>Maintenance</span><br />Specialists
+        </h1>
+        <p class="hero-sub reveal reveal-delay-2">
+          We fix potholes, seal cracks and restore asphalt surfaces — protecting your property and saving you thousands in costly repairs.
+        </p>
+        <div class="hero-buttons reveal reveal-delay-3">
+          <a href="#quote" class="btn btn-primary">
+            <i class="fa-solid fa-clipboard-check" style="margin-right:8px"></i>Get a Free Quote
+          </a>
+          <a href="tel:0274377010" class="btn btn-outline">
+            <i class="fa-solid fa-phone" style="margin-right:8px"></i>Call 027 437 7010
+          </a>
+        </div>
+        <div class="hero-stats reveal reveal-delay-4">
+          <div class="hero-stat">
+            <div class="hero-stat-num">Free</div>
+            <div class="hero-stat-label">No-obligation quotes</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-num">7 Days</div>
+            <div class="hero-stat-label">Including weekends</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-num">100%</div>
+            <div class="hero-stat-label">Quality guaranteed</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ SERVICES ══ -->
+  <section id="services" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label reveal">What We Do</span>
+        <h2 class="section-title reveal reveal-delay-1">Our Services</h2>
+        <p class="section-subtitle reveal reveal-delay-2">Three core services. All done properly, on time, with no shortcuts.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card reveal">
+          <img src="pothole-repair.jpg" alt="Pothole repair on road surface" class="service-card-img" loading="lazy" />
+          <div class="service-icon">
+            <i class="fa-solid fa-road-circle-exclamation"></i>
+          </div>
+          <h3>Pothole Repair</h3>
+          <p>That pothole isn't going to fix itself — and every week you wait, it gets bigger and more expensive. We fill and repair potholes properly, restoring a smooth, safe surface that lasts.</p>
+        </div>
+        <div class="service-card reveal reveal-delay-1">
+          <img src="crack-sealing.jpg" alt="Crack sealing on asphalt surface" class="service-card-img" loading="lazy" />
+          <div class="service-icon">
+            <i class="fa-solid fa-timeline"></i>
+          </div>
+          <h3>Crack Sealing</h3>
+          <p>Cracks are the early warning sign your driveway or carpark is sending you. Water gets in, weakens the base and turns small cracks into big ones. We seal cracks before they become costly repairs — protecting the surface from Auckland's wet winters.</p>
+        </div>
+        <div class="service-card reveal reveal-delay-2">
+          <img src="asphalt-sealing.jpeg" alt="Asphalt seal coating application" class="service-card-img" loading="lazy" />
+          <div class="service-icon">
+            <i class="fa-solid fa-paint-roller"></i>
+          </div>
+          <h3>Asphalt Seal Coating</h3>
+          <p>Think of seal coating as sunscreen for your driveway. It forms a protective barrier against UV rays, rain, oil and chemicals — keeping your asphalt looking fresh and extending its life by years.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ WHY CHOOSE US ══ -->
+  <section id="why" class="section section-dark">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label reveal">Why Pothole.nz</span>
+        <h2 class="section-title reveal reveal-delay-1">The Pothole.nz Difference</h2>
+        <p class="section-subtitle reveal reveal-delay-2">We keep it simple: show up, do the work right, and stand behind it.</p>
+      </div>
+      <div class="why-grid">
+        <div class="why-card reveal">
+          <div class="why-icon"><i class="fa-solid fa-map-location-dot"></i></div>
+          <h3>Auckland Local</h3>
+          <p>We live and work here. We know Auckland's conditions, climate and what your asphalt is up against.</p>
+        </div>
+        <div class="why-card reveal reveal-delay-1">
+          <div class="why-icon"><i class="fa-solid fa-calendar-days"></i></div>
+          <h3>Weekend Availability</h3>
+          <p>We work weekends so the job gets done without disrupting your week.</p>
+        </div>
+        <div class="why-card reveal reveal-delay-2">
+          <div class="why-icon"><i class="fa-solid fa-tag"></i></div>
+          <h3>Free Quotes</h3>
+          <p>No obligation. We assess your driveway or carpark and give you an honest price upfront.</p>
+        </div>
+        <div class="why-card reveal reveal-delay-3">
+          <div class="why-icon"><i class="fa-solid fa-shield-halved"></i></div>
+          <h3>Quality Guaranteed</h3>
+          <p>We do the job properly or we fix it. No shortcuts, no cheap materials, no excuses.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ WHO WE SERVE ══ -->
+  <section id="serve" class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label reveal">Who We Work With</span>
+        <h2 class="section-title reveal reveal-delay-1">We Work With</h2>
+        <p class="section-subtitle reveal reveal-delay-2">From homeowners to councils — if it's asphalt, we can help.</p>
+      </div>
+      <div class="serve-grid">
+        <div class="serve-card reveal">
+          <div class="serve-card-icon"><i class="fa-solid fa-house"></i></div>
+          <h3>Residential Driveways</h3>
+          <p>Your driveway is the first thing visitors see. Keep it looking sharp and protected year-round.</p>
+        </div>
+        <div class="serve-card reveal reveal-delay-1">
+          <div class="serve-card-icon"><i class="fa-solid fa-building"></i></div>
+          <h3>Commercial Carparks</h3>
+          <p>A well-maintained carpark reflects on your business. We keep yours safe, smooth and professional.</p>
+        </div>
+        <div class="serve-card reveal reveal-delay-2">
+          <div class="serve-card-icon"><i class="fa-solid fa-people-roof"></i></div>
+          <h3>Body Corporates</h3>
+          <p>Regular maintenance is the most cost-effective way to manage your shared asphalt assets.</p>
+        </div>
+        <div class="serve-card reveal reveal-delay-3">
+          <div class="serve-card-icon"><i class="fa-solid fa-city"></i></div>
+          <h3>Councils &amp; Organisations</h3>
+          <p>We work with councils and organisations who need reliable, quality asphalt maintenance at scale.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ HOW IT WORKS ══ -->
+  <section id="how" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label reveal">Simple Process</span>
+        <h2 class="section-title reveal reveal-delay-1">How It Works</h2>
+        <p class="section-subtitle reveal reveal-delay-2">Three steps. No hassle, no surprises.</p>
+      </div>
+      <div class="steps-container">
+        <div class="step reveal">
+          <div class="step-num">1</div>
+          <h3>Request a Free Quote</h3>
+          <p>Call us or fill in the form. We'll arrange a convenient time to assess your driveway or carpark.</p>
+        </div>
+        <div class="step reveal reveal-delay-1">
+          <div class="step-num">2</div>
+          <h3>We Assess &amp; Quote</h3>
+          <p>We inspect the surface, identify what needs doing, and give you a clear, honest price. No surprises.</p>
+        </div>
+        <div class="step reveal reveal-delay-2">
+          <div class="step-num">3</div>
+          <h3>Job Done</h3>
+          <p>We turn up when we say we will, do the work properly and leave the site clean. That's it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ TESTIMONIALS ══ -->
+  <section id="testimonials" class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label reveal">Happy Customers</span>
+        <h2 class="section-title reveal reveal-delay-1">What Our Customers Say</h2>
+        <p class="section-subtitle reveal reveal-delay-2">Real jobs. Real results. Real Aucklanders.</p>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card reveal">
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <blockquote>"Had a pothole at the entrance to our carpark for months. Pothole.nz came out on a Saturday, fixed it properly and sealed the whole area. Great price, great work."</blockquote>
+          <div class="testimonial-author">
+            <div class="author-avatar">MT</div>
+            <div>
+              <div class="author-name">Mike T.</div>
+              <div class="author-role">Body Corporate Manager, Henderson</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card reveal reveal-delay-1">
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <blockquote>"My driveway was cracking badly after last winter. These guys sealed it up, applied a fresh coat and it looks brand new. Really happy with the result."</blockquote>
+          <div class="testimonial-author">
+            <div class="author-avatar">SK</div>
+            <div>
+              <div class="author-name">Sarah K.</div>
+              <div class="author-role">Homeowner, Remuera</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card reveal reveal-delay-2">
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <blockquote>"Fast response, turned up on time and did a tidy job on our commercial carpark. Will definitely use again."</blockquote>
+          <div class="testimonial-author">
+            <div class="author-avatar">JB</div>
+            <div>
+              <div class="author-name">Jason B.</div>
+              <div class="author-role">Business Owner, Penrose</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ QUOTE FORM ══ -->
+  <section id="quote" class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label reveal">Contact Us</span>
+        <h2 class="section-title reveal reveal-delay-1">Get Your Free Quote</h2>
+        <p class="section-subtitle reveal reveal-delay-2">Fill in the form and we'll be in touch within one business day. No obligation, ever.</p>
+      </div>
+      <div class="form-wrapper reveal">
+        <form id="quoteForm" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="fname">Your Name <span style="color:var(--orange)">*</span></label>
+              <input type="text" id="fname" name="name" placeholder="John Smith" required />
+            </div>
+            <div class="form-group">
+              <label for="fphone">Phone Number <span style="color:var(--orange)">*</span></label>
+              <input type="tel" id="fphone" name="phone" placeholder="021 000 0000" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="femail">Email Address <span style="color:var(--orange)">*</span></label>
+            <input type="email" id="femail" name="email" placeholder="you@example.com" required />
+          </div>
+          <div class="form-group">
+            <label for="fservice">Service Needed</label>
+            <select id="fservice" name="service">
+              <option value="">— Select a service —</option>
+              <option value="Pothole Repair">Pothole Repair</option>
+              <option value="Crack Sealing">Crack Sealing</option>
+              <option value="Asphalt Seal Coating">Asphalt Seal Coating</option>
+              <option value="Not Sure">Not Sure</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="fmessage">Tell Us a Bit More</label>
+            <textarea id="fmessage" name="message" placeholder="Describe the issue, rough size of the area, property type (residential/commercial), location in Auckland…"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary form-submit">
+            <i class="fa-solid fa-paper-plane" style="margin-right:9px"></i>Send My Free Quote Request
+          </button>
+          <p class="form-note"><i class="fa-solid fa-lock"></i>Your details are kept private. We never share or spam.</p>
+        </form>
+        <div class="form-success" id="formSuccess">
+          <i class="fa-solid fa-circle-check"></i>
+          <h3>Thanks — we'll be in touch!</h3>
+          <p>We aim to respond within one business day. In a hurry? Call us on <a href="tel:0274377010" style="color:var(--orange);font-weight:600">027 437 7010</a>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ FOOTER ══ -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <a href="#hero" class="footer-logo">Pothole<span>.nz</span></a>
+        <div class="footer-links">
+          <a href="tel:0274377010"><i class="fa-solid fa-phone"></i>027 437 7010</a>
+          <a href="mailto:info@pothole.nz"><i class="fa-solid fa-envelope"></i>info@pothole.nz</a>
+          <a href="#services"><i class="fa-solid fa-list"></i>Services</a>
+          <a href="#quote"><i class="fa-solid fa-clipboard"></i>Get a Quote</a>
+        </div>
+      </div>
+      <div class="footer-copy">
+        &copy; 2025 Pothole.nz. All rights reserved. Proudly Auckland-based.
+      </div>
+    </div>
+  </footer>
+
+  <!-- ══ FLOAT CTA (mobile) ══ -->
+  <a href="#quote" class="float-cta" id="floatCta">
+    <i class="fa-solid fa-clipboard-check"></i>Free Quote
+  </a>
+
+  <script>
+    // ── Scroll reveal ──
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+    reveals.forEach(el => observer.observe(el));
+
+    // Trigger hero reveals immediately (already in view)
+    document.querySelectorAll('#hero .reveal').forEach(el => {
+      setTimeout(() => el.classList.add('visible'), 100);
+    });
+
+    // ── Sticky nav shadow ──
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.style.boxShadow = window.scrollY > 10
+        ? '0 3px 20px rgba(0,0,0,0.28)'
+        : '0 2px 16px rgba(0,0,0,0.18)';
+    });
+
+    // ── Float CTA: hide near footer ──
+    const floatCta = document.getElementById('floatCta');
+    const quoteSection = document.getElementById('quote');
+    window.addEventListener('scroll', () => {
+      const rect = quoteSection.getBoundingClientRect();
+      floatCta.style.opacity = rect.top < window.innerHeight ? '0' : '1';
+      floatCta.style.pointerEvents = rect.top < window.innerHeight ? 'none' : 'auto';
+    });
+
+    // ── Form submit ──
+    document.getElementById('quoteForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const name = document.getElementById('fname').value.trim();
+      const phone = document.getElementById('fphone').value.trim();
+      const email = document.getElementById('femail').value.trim();
+
+      if (!name || !phone || !email) {
+        const inputs = [
+          { el: document.getElementById('fname'), val: name },
+          { el: document.getElementById('fphone'), val: phone },
+          { el: document.getElementById('femail'), val: email },
+        ];
+        inputs.forEach(({ el, val }) => {
+          el.style.borderColor = val ? '' : '#e74c3c';
+          if (!val) el.focus();
+        });
+        return;
+      }
+
+      // Reset borders
+      ['fname','fphone','femail'].forEach(id => {
+        document.getElementById(id).style.borderColor = '';
+      });
+
+      // Show success
+      this.style.display = 'none';
+      document.getElementById('formSuccess').style.display = 'block';
+    });
+
+    // ── Reset field border on input ──
+    ['fname','fphone','femail'].forEach(id => {
+      document.getElementById(id).addEventListener('input', function () {
+        this.style.borderColor = '';
+      });
+    });
+  </script>
+
+</body>
+</html>
