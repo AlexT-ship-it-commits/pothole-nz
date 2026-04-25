@@ -387,7 +387,7 @@
     /* ── WHO WE SERVE ── */
     .serve-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 24px;
     }
 
@@ -406,16 +406,18 @@
     .serve-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); }
 
     .serve-card-icon {
-      width: 46px;
-      height: 46px;
-      background: rgba(232,98,10,0.1);
-      border-radius: 10px;
+      width: 52px;
+      height: 52px;
+      background: var(--orange);
+      border-radius: 12px;
       display: flex;
       align-items: center;
       justify-content: center;
+      transition: background var(--transition);
     }
 
-    .serve-card-icon i { font-size: 1.2rem; color: var(--orange); }
+    .serve-card-icon i { font-size: 1.35rem; color: var(--white); }
+    .serve-card:hover .serve-card-icon { background: var(--orange-dark); }
 
     .serve-card h3 {
       font-size: 1rem;
