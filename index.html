@@ -548,6 +548,91 @@
       color: var(--grey-text);
     }
 
+    /* ── FAQ ── */
+    #faq .faq-list {
+      max-width: 760px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    #faq .faq-item {
+      background: var(--white);
+      border-radius: var(--radius);
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      transition: border-color var(--transition), box-shadow var(--transition), background var(--transition);
+    }
+
+    #faq .faq-item:hover:not([open]) {
+      border-color: rgba(0, 0, 0, 0.12);
+      box-shadow: var(--shadow-hover);
+    }
+
+    #faq .faq-item[open] {
+      border-color: rgba(232, 98, 10, 0.35);
+      box-shadow: 0 6px 28px rgba(232, 98, 10, 0.12);
+      background: rgba(232, 98, 10, 0.04);
+    }
+
+    #faq .faq-item > summary {
+      list-style: none;
+      position: relative;
+      cursor: pointer;
+      padding: 18px 48px 18px 22px;
+      font-weight: 700;
+      font-size: 0.98rem;
+      color: var(--charcoal);
+      line-height: 1.45;
+      transition: color var(--transition);
+    }
+
+    #faq .faq-item > summary::-webkit-details-marker {
+      display: none;
+    }
+
+    #faq .faq-item > summary::marker {
+      content: '';
+      display: none;
+    }
+
+    #faq .faq-item > summary::after {
+      content: '';
+      position: absolute;
+      right: 22px;
+      top: 50%;
+      width: 8px;
+      height: 8px;
+      margin-top: -6px;
+      border-right: 2px solid var(--orange);
+      border-bottom: 2px solid var(--orange);
+      transform: rotate(45deg);
+      transition: transform var(--transition);
+    }
+
+    #faq .faq-item[open] > summary::after {
+      margin-top: -2px;
+      transform: rotate(-135deg);
+    }
+
+    #faq .faq-item > summary:hover {
+      color: var(--orange-dark);
+    }
+
+    #faq .faq-answer {
+      padding: 0 22px 20px;
+      font-size: 0.92rem;
+      color: var(--grey-text);
+      line-height: 1.7;
+      border-top: 1px solid rgba(0, 0, 0, 0.06);
+    }
+
+    #faq .faq-answer p + p {
+      margin-top: 10px;
+    }
+
     /* ── QUOTE FORM ── */
     #quote { background: var(--grey-bg); }
 
@@ -969,6 +1054,73 @@
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ FAQ ══ -->
+  <section id="faq" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label reveal">Common Questions</span>
+        <h2 class="section-title reveal reveal-delay-1">Frequently Asked Questions</h2>
+        <p class="section-subtitle reveal reveal-delay-2">Quick answers to what people ask us before they book.</p>
+      </div>
+      <div class="faq-list">
+        <details class="faq-item reveal">
+          <summary>Is asphalt sealing waterproof?</summary>
+          <div class="faq-answer">
+            <p>Yes. Promix SuperSeal forms a protective barrier that keeps water from penetrating the asphalt surface. This is exactly what prevents moisture from reaching the basecourse — the main cause of cracks and potholes over time.</p>
+          </div>
+        </details>
+        <details class="faq-item reveal reveal-delay-1">
+          <summary>How long will the work last?</summary>
+          <div class="faq-answer">
+            <p>Pothole repairs can last 10-15 years if the surrounding asphalt stays firm, no alligator cracking develops nearby, and water doesn't pool over the repaired area. Seal coating typically lasts 5-7 years, and a second coat extends life further. Crack sealing on its own is long-lasting, and significantly extended when topped with seal coating.</p>
+          </div>
+        </details>
+        <details class="faq-item reveal reveal-delay-2">
+          <summary>How much does it cost?</summary>
+          <div class="faq-answer">
+            <p>Cost depends on the scope — driveway size, condition, and which services are needed. We provide free, no-obligation assessments and quotes within 24 hours of visiting your site. For larger jobs over $1,200, a 35% deposit may be required before work begins.</p>
+          </div>
+        </details>
+        <details class="faq-item reveal reveal-delay-3">
+          <summary>When can I park after asphalt seal coating?</summary>
+          <div class="faq-answer">
+            <p>You can drive and park on the surface after 48 hours. For the first 7-9 days, please avoid sharp stationary turns and quick acceleration or braking. Full curing takes about 2 weeks.</p>
+          </div>
+        </details>
+        <details class="faq-item reveal reveal-delay-4">
+          <summary>When can I drive after a pothole or crack repair?</summary>
+          <div class="faq-answer">
+            <p>About 1 hour after the work is finished — no restrictions after that.</p>
+          </div>
+        </details>
+        <details class="faq-item reveal">
+          <summary>What does the process look like from quote to completion?</summary>
+          <div class="faq-answer">
+            <p>After your enquiry, we visit your site within 1-2 days and email a quote within 24 hours. Once approved, work is typically scheduled within a week, weather permitting (asphalt sealing requires at least 2 consecutive dry days).</p>
+          </div>
+        </details>
+        <details class="faq-item reveal reveal-delay-1">
+          <summary>Do you do small driveways, or only large jobs?</summary>
+          <div class="faq-answer">
+            <p>Both. We work on residential driveways and small to mid-size commercial carparks. There's no minimum job size for crack sealing or pothole repair — we'll fix whatever needs fixing.</p>
+          </div>
+        </details>
+        <details class="faq-item reveal reveal-delay-2">
+          <summary>How does payment work?</summary>
+          <div class="faq-answer">
+            <p>Residential customers pay on completion. For commercial clients, we accept the same arrangement, and we're also comfortable with standard 20-30 day invoice terms. For jobs over $1,200, we ask for a 35% deposit upfront.</p>
+          </div>
+        </details>
+        <details class="faq-item reveal reveal-delay-3">
+          <summary>What does the 2-year workmanship guarantee cover?</summary>
+          <div class="faq-answer">
+            <p>If something fails within 2 years because of how we did the work, we return and fix it at no charge. The guarantee doesn't cover new damage caused by external factors — for example, heavy machinery on a residential driveway. The exact terms are included in every quote.</p>
+          </div>
+        </details>
       </div>
     </div>
   </section>
