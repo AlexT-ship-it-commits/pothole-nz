@@ -492,67 +492,6 @@
       line-height: 1.65;
     }
 
-    /* ── TESTIMONIALS ── */
-    .testimonials-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 24px;
-    }
-
-    .testimonial-card {
-      background: var(--white);
-      border-radius: var(--radius);
-      padding: 30px 28px;
-      box-shadow: var(--shadow);
-      border: 1px solid rgba(0,0,0,0.05);
-      transition: transform var(--transition), box-shadow var(--transition);
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-
-    .testimonial-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); }
-
-    .stars { color: #f5a623; font-size: 0.85rem; letter-spacing: 2px; }
-
-    .testimonial-card blockquote {
-      font-size: 0.92rem;
-      color: var(--charcoal);
-      line-height: 1.7;
-      font-style: italic;
-      flex: 1;
-    }
-
-    .testimonial-author {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .author-avatar {
-      width: 42px;
-      height: 42px;
-      border-radius: 50%;
-      background: var(--orange);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 700;
-      color: var(--white);
-      font-size: 0.95rem;
-      flex-shrink: 0;
-    }
-
-    .author-name {
-      font-weight: 700;
-      font-size: 0.9rem;
-    }
-
-    .author-role {
-      font-size: 0.78rem;
-      color: var(--grey-text);
-    }
-
     /* ── FAQ ── */
     #faq .faq-list {
       max-width: 760px;
@@ -1072,52 +1011,6 @@
           <div class="step-num">3</div>
           <h3>Job Done</h3>
           <p>We turn up when we say we will, do the work properly and leave the site clean. That's it.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══ TESTIMONIALS ══ -->
-  <section id="testimonials" class="section section-alt">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-label reveal">Happy Customers</span>
-        <h2 class="section-title reveal reveal-delay-1">What Our Customers Say</h2>
-        <p class="section-subtitle reveal reveal-delay-2">Real jobs. Real results. Real Aucklanders.</p>
-      </div>
-      <div class="testimonials-grid">
-        <div class="testimonial-card reveal">
-          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <blockquote>"Had a pothole at the entrance to our carpark for months. Pothole.nz came out on a Saturday, fixed it properly and sealed the whole area. Great price, great work."</blockquote>
-          <div class="testimonial-author">
-            <div class="author-avatar">MT</div>
-            <div>
-              <div class="author-name">Mike T.</div>
-              <div class="author-role">Body Corporate Manager, Henderson</div>
-            </div>
-          </div>
-        </div>
-        <div class="testimonial-card reveal reveal-delay-1">
-          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <blockquote>"My driveway was cracking badly after last winter. These guys sealed it up, applied a fresh coat and it looks brand new. Really happy with the result."</blockquote>
-          <div class="testimonial-author">
-            <div class="author-avatar">SK</div>
-            <div>
-              <div class="author-name">Sarah K.</div>
-              <div class="author-role">Homeowner, Remuera</div>
-            </div>
-          </div>
-        </div>
-        <div class="testimonial-card reveal reveal-delay-2">
-          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <blockquote>"Fast response, turned up on time and did a tidy job on our commercial carpark. Will definitely use again."</blockquote>
-          <div class="testimonial-author">
-            <div class="author-avatar">JB</div>
-            <div>
-              <div class="author-name">Jason B.</div>
-              <div class="author-role">Business Owner, Penrose</div>
-            </div>
-          </div>
         </div>
       </div>
     </div>
