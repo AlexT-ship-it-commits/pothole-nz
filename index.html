@@ -1201,7 +1201,7 @@
     });
 
     // ── Form submit ──
-    document.getElementById('quoteForm').addEventListener('submit', function (e) {
+    document.getElementById('quoteForm').addEventListener('submit', async function (e) {
       e.preventDefault();
       const name = document.getElementById('fname').value.trim();
       const phone = document.getElementById('fphone').value.trim();
@@ -1225,9 +1225,27 @@
         document.getElementById(id).style.borderColor = '';
       });
 
-      // Show success
-      this.style.display = 'none';
-      document.getElementById('formSuccess').style.display = 'block';
+      // Submit form via Formspree
+      try {
+        const formData = new FormData(this);
+        const response = await fetch(this.action, {
+          method: 'POST',
+          body: formData,
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+
+        if (response.ok) {
+          // Show success
+          this.style.display = 'none';
+          document.getElementById('formSuccess').style.display = 'block';
+        } else {
+          alert('Sorry, there was a problem submitting your form. Please try again or call us directly.');
+        }
+      } catch (error) {
+        alert('Sorry, there was a network problem. Please try again or call us directly.');
+      }
     });
 
     // ── Reset field border on input ──
